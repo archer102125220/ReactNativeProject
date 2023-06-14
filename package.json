@@ -6,9 +6,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "cross-env webpack-dev-server --progress --color --open",
-    "build:android": "cd ./android && ./gradlew assembleRelease",
-    "build:ios": "cd ./ios && xcodebuild archive -workspace ReactNativeProject.xcworkspace -scheme ReactNativeProject -destination generic/platform=iOS build -configuration release -archivePath ./build/archive/ReactNativeProject.xcarchive && xcodebuild -exportArchive -archivePath ./build/archive/ReactNativeProject.xcarchive -exportPath ./build/archive/ -exportOptionsPlist ./exportOptionsAdHoc.plist -allowProvisioningUpdates",
-    "build:web": "webpack --mode production",
+    "bundle:android": "mkdir -p build/android/images && react-native bundle --platform android --dev false --entry-file index.js --bundle-output ./build/android/main.js --assets-dest ./build/android/images",
+    "bundle:ios": "mkdir -p build/ios/images && react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ./build/ios/main.js --assets-dest ./build/ios/images",
+    "bundle:web": "webpack --mode production",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest"

@@ -7,7 +7,7 @@ module.exports = {
   mode: process.env.NODE_ENV || 'development',
   entry: './index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build/web'),
     filename: 'index.js',
   },
   resolve: {
@@ -15,9 +15,6 @@ module.exports = {
     alias: {
       'react-native': 'react-native-web',
     },
-  },
-  node: {
-    fs: 'empty',
   },
   module: {
     rules: [
